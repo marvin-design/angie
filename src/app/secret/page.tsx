@@ -240,7 +240,7 @@ export default function SecretPage() {
             </p>
             <p className="text-base text-rose-400 font-semibold mb-8">
               {guess === "yes"
-                ? "Angie appreciates you 💕✨"
+                ? "haiyaa 💕✨"
                 : "But only Angie knows the real answer 🤫💕"}
             </p>
 
