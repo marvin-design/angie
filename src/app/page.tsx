@@ -225,7 +225,7 @@ export default function LinkInBio() {
                 <GraduationCap className="w-4.5 h-4.5 text-white" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-700">Gitugi Girls&apos; High School</p>
+                <p className="text-sm font-semibold text-gray-700">Ihiga Secondary School</p>
                 <p className="text-xs text-gray-400 mt-0.5">Form 4 Student</p>
               </div>
             </div>
