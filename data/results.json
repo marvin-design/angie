@@ -1,0 +1,20 @@
+[
+  {
+    "id": "07302c99-cfcf-4f67-ba7d-1a52def8553d",
+    "guess": "Peter",
+    "admitted": false,
+    "timestamp": "2026-08-03T18:07:05.294Z"
+  },
+  {
+    "id": "4f1dab5e-3079-4f38-b7d3-e12ac9aae5a7",
+    "guess": "yes",
+    "admitted": true,
+    "timestamp": "2026-08-03T18:08:09.170Z"
+  },
+  {
+    "id": "36a2ca33-2e62-47bd-99a1-aa5c6cb08003",
+    "guess": "yes",
+    "admitted": true,
+    "timestamp": "2026-08-03T18:10:08.773Z"
+  }
+]

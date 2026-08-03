@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Heart, ArrowLeft, Sparkles, MessageCircleHeart } from "lucide-react";
 import Link from "next/link";
+import { saveSecretResult } from "../actions";
 
 type Stage = "question" | "yes" | "no" | "whois" | "reveal";
 
@@ -11,6 +12,12 @@ export default function SecretPage() {
   const [guess, setGuess] = useState("");
   const [noPosition, setNoPosition] = useState<{ x: number; y: number; rotation: number } | null>(null);
   const [noDodgeCount, setNoDodgeCount] = useState(0);
+
+  const handleReveal = (isAdmitted: boolean) => {
+    setStage("reveal");
+    // Fire and forget
+    saveSecretResult(isAdmitted ? "yes" : guess, isAdmitted).catch(console.error);
+  };
 
   // Pre-calculated values for floating hearts to keep the render function pure
   const HEARTS_CONFIG = [
@@ -127,7 +134,7 @@ export default function SecretPage() {
               <button
                 onClick={() => {
                   setGuess("yes");
-                  setStage("reveal");
+                  handleReveal(true);
                 }}
                 className="px-10 py-4 rounded-2xl bg-gradient-to-r from-rose-400 to-pink-500 text-white font-bold text-lg shadow-lg shadow-rose-200/50 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 active:translate-y-0"
               >
@@ -166,7 +173,7 @@ export default function SecretPage() {
                 className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 text-gray-700 text-center font-medium placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-violet-300/50 focus:border-violet-300 shadow-sm transition-all"
               />
               <button
-                onClick={() => setStage("reveal")}
+                onClick={() => handleReveal(false)}
                 disabled={!guess.trim()}
                 className="w-full px-6 py-4 rounded-2xl bg-gradient-to-r from-violet-400 to-indigo-500 text-white font-bold text-lg shadow-lg shadow-violet-200/50 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 disabled:hover:shadow-lg"
               >
