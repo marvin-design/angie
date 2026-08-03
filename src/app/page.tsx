@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Heart, Sparkles, MapPin, X, ChevronLeft, ChevronRight, GraduationCap, Award, BookOpen } from "lucide-react";
 
 /* ─── Inline SVG icons (lucide-react dropped brand icons) ─── */
@@ -39,7 +40,7 @@ const SOCIALS = [
   },
   {
     name: "TikTok",
-    href: "https://tiktok.com/",
+    href: "https://www.tiktok.com/@2764angie",
     icon: IconTikTok,
     color: "from-gray-900 to-gray-700",
     hoverGlow: "hover:shadow-gray-400/40",
@@ -323,6 +324,17 @@ export default function LinkInBio() {
             );
           })}
         </section>
+
+        {/* ── Secret Button ── */}
+        <div className="mt-10 text-center animate-fade-up delay-900">
+          <Link
+            href="/secret"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/70 backdrop-blur-sm border border-rose-200/60 text-rose-400 font-medium text-sm hover:bg-rose-50 hover:border-rose-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-rose-100/50 transition-all duration-300"
+          >
+            <Heart className="w-4 h-4 fill-rose-300" />
+            Tap if you&apos;re curious... 👀
+          </Link>
+        </div>
 
         {/* ── Footer ── */}
         <footer className="mt-14 text-center animate-fade-up delay-1000">
